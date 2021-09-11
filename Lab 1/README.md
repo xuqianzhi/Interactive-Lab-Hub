@@ -12,7 +12,7 @@ Activity: players who are waiting for the elevator can understand if anyone is c
 Goals: at a non-crowded building, the chance of empty elevator is high, therefore habitually, people at such building tend to assume there is no one in the elevator upon door opening. The goal of this design is to avoid any potential collision by alerting people in advance. 
 
 **Include a picture of your storyboard here**
-See "image" sub-repo
+![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%201/images/Storyboard.jpg)
 
 **Summarize feedback you got here.**
 It will be difficult to implement for existing elevators because adding additional indicator light and sensors can be expensive and impractical. 
@@ -36,7 +36,7 @@ For this particular idea, it is quite hard to get Wi-Fi source in the elevator, 
 ## Part E. Costume the device
 
 \*\***Include sketches of what your device might look like here.**\*\*
-See "image" sub-repo
+![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%201/images/Device_Sketch.jpg)
 
 \*\***What concerns or opportunitities are influencing the way you've designed the device to look?**\*\*
 How to integrate the device with elevators
