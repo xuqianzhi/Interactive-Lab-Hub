@@ -44,7 +44,7 @@ How to integrate the device with elevators
 ## Part F. Record
 
 \*\***Take a video of your prototyped interaction.**\*\*
-See "video" sub-repo
+https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%201/Video/interaction%20acting.mp4
 
 \*\***Please indicate anyone you collaborated with on this Lab.**\*\*
 Feedback: Jenny Li
