@@ -83,3 +83,6 @@ Improved Storyboard: (original storyboard pictures are in the image folder)
 ![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%201/images/storyboard_part2_1.JPG)
 
 ![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%201/images/storyboard_part2_2.JPG)
+
+Acting video: 
+https://www.youtube.com/watch?v=TpZKjXJHsw8
