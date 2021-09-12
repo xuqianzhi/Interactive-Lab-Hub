@@ -86,3 +86,6 @@ Improved Storyboard: (original storyboard pictures are in the image folder)
 
 Acting video: 
 https://www.youtube.com/watch?v=TpZKjXJHsw8
+
+Device sketch:
+![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%201/images/IMG_0586.jpg)
