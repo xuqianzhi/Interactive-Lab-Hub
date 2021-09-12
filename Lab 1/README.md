@@ -80,6 +80,6 @@ Do last week’s assignment again, but this time:
 \*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**\*\*
 
 Improved Storyboard:
-https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%201/images/storyboard_part2_1.JPG
+![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%201/images/storyboard_part2_1.JPG)
 
-https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%201/images/storyboard_part2_2.JPG
+![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%201/images/storyboard_part2_2.JPG)
