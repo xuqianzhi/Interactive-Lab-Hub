@@ -64,30 +64,86 @@ backlight.value = True
 button = digitalio.DigitalInOut(board.D23)
 button.switch_to_input()
 
-# my design use the duration of the song numb by Linkin Park 
-numb_in_second = 188
+# song: [name, duration in second, author]
+liebestraum = ["Liebesträume", "4:53", "Franz Liszt"] 
+la_campanella = ["La campanella", "4:48", "Franz Liszt"]
+nocturne= ["Nocturne No. 2 Op. 9", "3:50", "Frédéric Chopin"]
+
+def display_song_info():
+    hour = int(strftime("%H"))
+    text = []
+
+    if (hour > 22 or hour < 6):
+        text.append("No music info can be displayed")
+        text.append("because you should be sleeping!")
+    else:
+        if (hour >= 6 and hour < 12):
+            # morning
+            text.append(liebestraum[0])
+            text.append("Author: " + liebestraum[2])
+            text.append("Duration: " + liebestraum[1])
+        elif (hour >= 12 and hour < 18):
+            # afternoon
+            text.append(la_campanella[0])
+            text.append("Author: " + la_campanella[2])
+            text.append("Duration: " + la_campanella[1])
+        else:
+            # night
+            text.append(nocturne[0])
+            text.append("Author: " + nocturne[2])
+            text.append("Duration: " + nocturne[1])
+    return text
+
+def display_main_screen():
+    """
+    time_category: morning(6-12pm), afternoon(12-6pm), night(6-10pm), sleep(10pm-6am)
+    sleeping (10pm - 6am): no music
+    Morning (6 - 12pm): liebestraum, Franz Liszt
+    Afternoon: (12 - 6pm): Hungarian rhapsodies, Franz Liszt
+    Night (6 - 10pm): Nocturne No. 2 Op. 9 Frederic Chopin
+    """
+    hour = int(strftime("%H"))
+    text = []
+
+    if (hour > 22 or hour < 6):
+        text.append("You should be Sleeping!")
+        text.append("Good Night!")
+    else:
+        text.append("Time for listening to")
+        if (hour >= 6 and hour < 12):
+            # morning
+            text.append(liebestraum[0])
+            text.append("by " + liebestraum[2])
+            text.append("for your morning!")
+        elif (hour >= 12 and hour < 18):
+            # afternoon
+            text.append(la_campanella[0])
+            text.append("by " + la_campanella[2])
+            text.append("for your afternoon!")
+        else:
+            # night
+            text.append(nocturne[0])
+            text.append("by " + nocturne[2])
+            text.append("for your evening!")
+    return text
+
+
 
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py
+    texts = []
     if button.value:
-        hour = int(strftime("%H"))
-        minute = int(strftime("%M"))
-        second = int(strftime("%S"))
-        time_in_second = hour * 3600 + minute * 60 + second
-        num_of_numb = time_in_second / numb_in_second
-        draw.text((0, 0), strftime("%m/%d/%Y"), font=font, fill="#FF00FF")
-        draw.text((0, 20), "The song, Numb", font=font, fill="#FF00FF")
-        draw.text((0, 40), "by Linkin Park", font=font, fill="#FF00FF")
-        draw.text((0, 60), "has been played", font=font, fill="#FF00FF")
-        draw.text((0, 80), "{:.2f}".format(num_of_numb), font=font, fill="#FF0000")
-        draw.text((60, 80), " times", font=font, fill="#FF00FF")
-        draw.text((0, 100), "since midnight of today", font=font, fill="#FF00FF")
+        texts = display_song_info()            
     else:
-        draw.text((0, 0), "where each numb lasts", font=font, fill="#FF00FF")
-        draw.text((0, 20), "3:08", font=font, fill="#FF0000")
+        texts = display_main_screen()
+
+    for i in range(len(texts)):
+        text = texts[i]
+        draw.text((0, i * 20), text, font=font, fill="#FF00FF")
+
     # Display image.
     disp.image(image, rotation)
     time.sleep(1)
