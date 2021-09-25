@@ -77,6 +77,7 @@ def display_song_info():
         text.append("No music info can be displayed")
         text.append("because you should be sleeping!")
     else:
+        text.append("Song info:")
         if (hour >= 6 and hour < 12):
             # morning
             text.append(liebestraum[0])
