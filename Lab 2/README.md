@@ -5,3 +5,7 @@ https://user-images.githubusercontent.com/40366675/134090019-e8e54e37-c0ba-45c8-
 
 ## Sketch:
 ![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%202/sketch_part1.jpeg)
+
+# Video:
+https://www.youtube.com/watch?v=d94MYAkTm1o
+
