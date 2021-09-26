@@ -73,26 +73,29 @@ def display_song_info():
     hour = int(strftime("%H"))
     text = []
 
-    if (hour > 22 or hour < 6):
-        text.append("No music info can be displayed")
-        text.append("because you should be sleeping!")
-    else:
-        text.append("Song info:")
-        if (hour >= 6 and hour < 12):
-            # morning
-            text.append(liebestraum[0])
-            text.append("Author: " + liebestraum[2])
-            text.append("Duration: " + liebestraum[1])
-        elif (hour >= 12 and hour < 18):
-            # afternoon
-            text.append(la_campanella[0])
-            text.append("Author: " + la_campanella[2])
-            text.append("Duration: " + la_campanella[1])
-        else:
-            # night
-            text.append(nocturne[0])
-            text.append("Author: " + nocturne[2])
-            text.append("Duration: " + nocturne[1])
+    text.append("No music info can be displayed")
+    text.append("because you should be sleeping!")
+
+    # if (hour > 22 or hour < 6):
+    #     text.append("No music info can be displayed")
+    #     text.append("because you should be sleeping!")
+    # else:
+    #     text.append("Song info:")
+    #     if (hour >= 6 and hour < 12):
+    #         # morning
+    #         text.append(liebestraum[0])
+    #         text.append("Author: " + liebestraum[2])
+    #         text.append("Duration: " + liebestraum[1])
+    #     elif (hour >= 12 and hour < 18):
+    #         # afternoon
+    #         text.append(la_campanella[0])
+    #         text.append("Author: " + la_campanella[2])
+    #         text.append("Duration: " + la_campanella[1])
+    #     else:
+    #         # night
+    #         text.append(nocturne[0])
+    #         text.append("Author: " + nocturne[2])
+    #         text.append("Duration: " + nocturne[1])
     return text
 
 def display_main_screen():
@@ -106,26 +109,29 @@ def display_main_screen():
     hour = int(strftime("%H"))
     text = []
 
-    if (hour > 22 or hour < 6):
-        text.append("You should be Sleeping!")
-        text.append("Good Night!")
-    else:
-        text.append("Time for listening to")
-        if (hour >= 6 and hour < 12):
-            # morning
-            text.append(liebestraum[0])
-            text.append("by " + liebestraum[2])
-            text.append("for your morning!")
-        elif (hour >= 12 and hour < 18):
-            # afternoon
-            text.append(la_campanella[0])
-            text.append("by " + la_campanella[2])
-            text.append("for your afternoon!")
-        else:
-            # night
-            text.append(nocturne[0])
-            text.append("by " + nocturne[2])
-            text.append("for your evening!")
+    text.append("You should be Sleeping!")
+    text.append("Good Night!")
+
+    # if (hour > 22 or hour < 6):
+    #     text.append("You should be Sleeping!")
+    #     text.append("Good Night!")
+    # else:
+    #     text.append("Time for listening to")
+    #     if (hour >= 6 and hour < 12):
+    #         # morning
+    #         text.append(liebestraum[0])
+    #         text.append("by " + liebestraum[2])
+    #         text.append("for your morning!")
+    #     elif (hour >= 12 and hour < 18):
+    #         # afternoon
+    #         text.append(la_campanella[0])
+    #         text.append("by " + la_campanella[2])
+    #         text.append("for your afternoon!")
+    #     else:
+    #         # night
+    #         text.append(nocturne[0])
+    #         text.append("by " + nocturne[2])
+    #         text.append("for your evening!")
     return text
 
 
