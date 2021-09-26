@@ -73,19 +73,21 @@ def display_song_info():
     hour = int(strftime("%H"))
     text = []
 
-    text.append("No music info can be displayed")
-    text.append("because you should be sleeping!")
+    text.append("Song info:")
+    text.append(liebestraum[0])
+    text.append("Author: " + liebestraum[2])
+    text.append("Duration: " + liebestraum[1])
 
     # if (hour > 22 or hour < 6):
     #     text.append("No music info can be displayed")
     #     text.append("because you should be sleeping!")
     # else:
-    #     text.append("Song info:")
-    #     if (hour >= 6 and hour < 12):
-    #         # morning
-    #         text.append(liebestraum[0])
-    #         text.append("Author: " + liebestraum[2])
-    #         text.append("Duration: " + liebestraum[1])
+        # text.append("Song info:")
+        # if (hour >= 6 and hour < 12):
+        #     # morning
+        #     text.append(liebestraum[0])
+        #     text.append("Author: " + liebestraum[2])
+        #     text.append("Duration: " + liebestraum[1])
     #     elif (hour >= 12 and hour < 18):
     #         # afternoon
     #         text.append(la_campanella[0])
@@ -109,8 +111,10 @@ def display_main_screen():
     hour = int(strftime("%H"))
     text = []
 
-    text.append("You should be Sleeping!")
-    text.append("Good Night!")
+    text.append("Time for listening to")
+    text.append(liebestraum[0])
+    text.append("by " + liebestraum[2])
+    text.append("for your morning!")
 
     # if (hour > 22 or hour < 6):
     #     text.append("You should be Sleeping!")
