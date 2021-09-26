@@ -74,9 +74,9 @@ def display_song_info():
     text = []
 
     text.append("Song info:")
-    text.append(liebestraum[0])
-    text.append("Author: " + liebestraum[2])
-    text.append("Duration: " + liebestraum[1])
+    text.append(la_campanella[0])
+    text.append("Author: " + la_campanella[2])
+    text.append("Duration: " + la_campanella[1])
 
     # if (hour > 22 or hour < 6):
     #     text.append("No music info can be displayed")
@@ -112,9 +112,9 @@ def display_main_screen():
     text = []
 
     text.append("Time for listening to")
-    text.append(liebestraum[0])
-    text.append("by " + liebestraum[2])
-    text.append("for your morning!")
+    text.append(la_campanella[0])
+    text.append("by " + la_campanella[2])
+    text.append("for your afternoon!")
 
     # if (hour > 22 or hour < 6):
     #     text.append("You should be Sleeping!")
