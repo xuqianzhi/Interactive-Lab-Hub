@@ -10,19 +10,21 @@ https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%203/my_speech
 
 ### Storyboard
 
-Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stuck? Make a device that talks for dogs. If that is too stupid, find an application that is better than that.) 
-
 \*\***Post your storyboard and diagram here.**\*\*
 
-Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses. 
+![alt text]()
 
 \*\***Please describe and document your process.**\*\*
 
+This design, Aribo, is a voice-command music player. It supports functionality of play the music, volumn adjustment, and stop the music.
+
 ### Acting out the dialogue
 
-Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing.  Please record this interaction (for example, using Zoom's record feature).
+https://www.youtube.com/watch?v=LridFtBDbWQ
 
 \*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
+
+One edge case is "never mind", where user ask Aribo to play the music, but instantly regret the decision and want to tell Aribo "never mind, actually don't play it". In this case, we might need to design extra voice command to implement this.
 
 ### Wizarding with the Pi (optional)
 In the [demo directory](./demo), you will find an example Wizard of Oz project. In that project, you can see how audio and sensor data is streamed from the Pi to a wizard controller that runs in the browser.  You may use this demo code as a template. By running the `app.py` script, you can see how audio and sensor data (Adafruit MPU-6050 6-DoF Accel and Gyro Sensor) is streamed from the Pi to a wizard controller that runs in the browser `http://<YouPiIPAddress>:5000`. You can control what the system says from the controller as well!
