@@ -12,7 +12,7 @@ https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%203/my_speech
 
 \*\***Post your storyboard and diagram here.**\*\*
 
-![alt text]()
+![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%203/sketch_part1.jpg)
 
 \*\***Please describe and document your process.**\*\*
 
