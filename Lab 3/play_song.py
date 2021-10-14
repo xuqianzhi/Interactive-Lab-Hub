@@ -43,7 +43,7 @@ while True:
             user_input.split(never_mind)[1]
         if numb in user_input:
             speak("numb by linkin park is now playing ")
-        else if from_the_inside in user_input:
+        elif from_the_inside in user_input:
             speak("from the inside by linkin park is now playing ")
     else:
         print(rec.PartialResult())
