@@ -39,14 +39,16 @@ while True:
         user_input = res['text']
     else:
         print(rec.PartialResult())
-        res = json.loads(rec.PartialResult())
-        user_input = res['partial']
+        # res = json.loads(rec.PartialResult())
+        # user_input = res['partial']
     if user_input:
         if never_mind in user_input:
             user_input.split(never_mind)[1]
         if numb in user_input:
             speak("numb_playing.sh")
+            break
         elif from_the_inside in user_input:
             speak("fti_playing.sh")
+            break
 
 print(rec.FinalResult())
