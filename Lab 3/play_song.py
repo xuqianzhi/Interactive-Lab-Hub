@@ -22,12 +22,8 @@ never_mind = "never mind "
 numb = "numb "
 from_the_inside = "from the inside "
 
-def speak(content):
-    command = """
-        say() { 
-            local IFS=+;/usr/bin/mplayer -ao alsa -really-quiet -noconsolecontrols "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=$*&tl=en"; 
-        } ; 
-    """ + f"say '{content}'"
+def speak(filename):
+    command = "./" + filename
     subprocess.call(command, shell=True)
 
 rec = KaldiRecognizer(model, wf.getframerate(), never_mind + numb + from_the_inside)
@@ -49,8 +45,8 @@ while True:
         if never_mind in user_input:
             user_input.split(never_mind)[1]
         if numb in user_input:
-            speak("numb by linkin park is now playing ")
+            speak()
         elif from_the_inside in user_input:
-            speak("from the inside by linkin park is now playing ")
+            speak()
 
 print(rec.FinalResult())
