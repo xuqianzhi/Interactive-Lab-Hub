@@ -19,8 +19,8 @@ if wf.getnchannels() != 1 or wf.getsampwidth() != 2 or wf.getcomptype() != "NONE
 model = Model("model")
 # You can also specify the possible word list
 never_mind = "never mind "
-numb = "play numb "
-from_the_inside = "play from the inside "
+numb = "numb "
+from_the_inside = "from the inside "
 
 def speak(content):
     command = """
@@ -34,11 +34,16 @@ rec = KaldiRecognizer(model, wf.getframerate(), never_mind + numb + from_the_ins
 
 while True:
     data = wf.readframes(4000)
+    res = None
     if len(data) == 0:
         break
     if rec.AcceptWaveform(data):
         print(rec.Result())
         res = json.loads(rec.Result())
+    else:
+        print(rec.PartialResult())
+        res = json.loads(rec.PartialResult())
+    if res:
         user_input = res['text']
         if never_mind in user_input:
             user_input.split(never_mind)[1]
@@ -46,7 +51,5 @@ while True:
             speak("numb by linkin park is now playing ")
         elif from_the_inside in user_input:
             speak("from the inside by linkin park is now playing ")
-    else:
-        print(rec.PartialResult())
 
 print(rec.FinalResult())
