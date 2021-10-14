@@ -65,18 +65,16 @@ Try to get at least two people to interact with your system. (Ideally, you would
 Answer the following:
 
 ### What worked well about the system and what didn't?
-\*\**your answer here*\*\*
+Users are generally happy about the "never mind" functionality, but they worry about Aribo misunderstand the user intent e.g. play wrong song. Also, the delay of the system (time it took to understand the user) is really lengthy and produce a negative feedback
 
 ### What worked well about the controller and what didn't?
-
-\*\**your answer here*\*\*
+The voice recognition is pretty bad, other than that it's all pretty good
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
-
-\*\**your answer here*\*\*
-
+Without extremely functional voice recognition system, it is so much better to design voice command only as a supporting feature, and all features supported by voice command should also be supported via other control input (like button control)
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
-
-\*\**your answer here*\*\*
+some example of collecting data:
+* music get manually paused/changed after voice command could imply failure case
+* frequency of button pressing vs. voice commanding
 
