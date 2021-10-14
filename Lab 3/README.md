@@ -45,10 +45,15 @@ The system should:
 * require participants to speak to it. 
 
 *Document how the system works*
+
 System would ask: what song would you like to play
+
 option 1: state song name directly
+
 option 2: state song A name, but change mind and play song B
+
 option 3: state song A name, but change mind and stop playing
+
 option 4: stop playing
 
 *Include videos or screencaptures of both the system and the controller.*
