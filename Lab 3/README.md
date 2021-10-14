@@ -27,14 +27,14 @@ https://www.youtube.com/watch?v=LridFtBDbWQ
 One edge case is "never mind", where user ask Aribo to play the music, but instantly regret the decision and want to tell Aribo "never mind, actually don't play it". In this case, we might need to design extra voice command to implement this.
 
 # Lab 3 Part 2
-
-For Part 2, you will redesign the interaction with the speech-enabled device using the data collected, as well as feedback from part 1.
-
 ## Prep for Part 2
 
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings...
+  * When the user change their mind in the middle of speaking, the user is capable of saying "never mind" and speak of a new decision
 2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
+  * it's been suggested by many people that volumn and play/pause control should be done by button, so button control will be added
 3. Make a new storyboard, diagram and/or script based on these reflections.
+  ![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%203/sketch_part1.jpg)
 
 ## Prototype your system
 
@@ -44,8 +44,14 @@ The system should:
 * require participants to speak to it. 
 
 *Document how the system works*
+System would ask: what song would you like to play
+option 1: state song name directly
+option 2: state song A name, but change mind and play song B
+option 3: state song A name, but change mind and stop playing
+option 4: stop playing
 
 *Include videos or screencaptures of both the system and the controller.*
+https://youtu.be/kTdjX3j4Rqo
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
