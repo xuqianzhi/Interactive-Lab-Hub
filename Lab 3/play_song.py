@@ -34,17 +34,18 @@ rec = KaldiRecognizer(model, wf.getframerate(), never_mind + numb + from_the_ins
 
 while True:
     data = wf.readframes(4000)
-    res = None
+    user_input = None
     if len(data) == 0:
         break
     if rec.AcceptWaveform(data):
         print(rec.Result())
         res = json.loads(rec.Result())
+        user_input = res['text']
     else:
         print(rec.PartialResult())
         res = json.loads(rec.PartialResult())
-    if res:
-        user_input = res['text']
+        user_input = res['partial']
+    if user_input:
         if never_mind in user_input:
             user_input.split(never_mind)[1]
         if numb in user_input:
