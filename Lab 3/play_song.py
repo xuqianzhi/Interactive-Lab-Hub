@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+
+from vosk import Model, KaldiRecognizer
+import subprocess
+import sys
+import os
+import wave
+
+if not os.path.exists("model"):
+    print ("Please download the model from https://github.com/alphacep/vosk-api/blob/master/doc/models.md and unpack as 'model' in the current folder.")
+    exit (1)
+
+wf = wave.open(sys.argv[1], "rb")
+if wf.getnchannels() != 1 or wf.getsampwidth() != 2 or wf.getcomptype() != "NONE":
+    print ("Audio file must be WAV format mono PCM.")
+    exit (1)
+
+model = Model("model")
+# You can also specify the possible word list
+never_mind = "never mind "
+numb = "play numb "
+from_the_inside = "play from the inside "
+
+def speak(content):
+    command = """
+        say() { 
+            local IFS=+;/usr/bin/mplayer -ao alsa -really-quiet -noconsolecontrols "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=$*&tl=en"; 
+        } ; 
+    """ + f"say '{content}'"
+    subprocess.call(command, shell=True)
+
+rec = KaldiRecognizer(model, wf.getframerate(), never_mind + numb + from_the_inside)
+
+while True:
+    data = wf.readframes(4000)
+    if len(data) == 0:
+        break
+    if rec.AcceptWaveform(data):
+        print(rec.Result())
+        res = json.loads(rec.Result())
+        user_input = res['text']
+        if never_mind in user_input:
+            user_input.split(never_mind)[1]
+        if numb in user_input:
+            speak("numb by linkin park is now playing ")
+        else if from_the_inside in user_input:
+            speak("from the inside by linkin park is now playing ")
+    else:
+        print(rec.PartialResult())
+
+print(rec.FinalResult())
