@@ -5,6 +5,7 @@ import subprocess
 import sys
 import os
 import wave
+import json
 
 if not os.path.exists("model"):
     print ("Please download the model from https://github.com/alphacep/vosk-api/blob/master/doc/models.md and unpack as 'model' in the current folder.")
