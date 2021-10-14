@@ -22,13 +22,38 @@ never_mind = "never mind "
 numb = "numb "
 from_the_inside = "from the inside "
 
+buttonA = digitalio.DigitalInOut(board.D23)
+buttonB = digitalio.DigitalInOut(board.D24)
+buttonA.switch_to_input()
+buttonB.switch_to_input()
+
+def button_a_pressed():
+    return not buttonA.value
+
+def button_b_pressed():
+    return not buttonB.value
+
 def speak(filename):
     command = "./" + filename
+    subprocess.call(command, shell=True)
+
+def play_numb():
+    command = "aplay numb.mp3" 
+    subprocess.call(command, shell=True)
+
+def play_fti():
+    command = "aplay from_the_inside.mp3" 
+    subprocess.call(command, shell=True)
+
+def stop_music():
+    command = "killall aplay" 
     subprocess.call(command, shell=True)
 
 rec = KaldiRecognizer(model, wf.getframerate(), never_mind + numb + from_the_inside)
 
 while True:
+    if (button_a_pressed() and button_b_pressed()):
+        stop_music()
     data = wf.readframes(4000)
     user_input = None
     if len(data) == 0:
@@ -44,11 +69,13 @@ while True:
     if user_input:
         if never_mind in user_input:
             user_input.split(never_mind)[1]
-        if numb in user_input:
+        if "numb" in user_input:
             speak("numb_playing.sh")
+            play_numb()
             break
         elif from_the_inside in user_input:
             speak("fti_playing.sh")
+            play_fti()
             break
 
 print(rec.FinalResult())
