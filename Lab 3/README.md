@@ -34,7 +34,8 @@ One edge case is "never mind", where user ask Aribo to play the music, but insta
 2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
   * it's been suggested by many people that volumn and play/pause control should be done by button, so button control will be added
 3. Make a new storyboard, diagram and/or script based on these reflections.
-  ![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%203/sketch_part1.jpg)
+  ![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%203/sketch_part2_1.jpg)
+  ![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%203/sketch_part2_2.jpg)
 
 ## Prototype your system
 
