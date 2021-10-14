@@ -45,8 +45,8 @@ while True:
         if never_mind in user_input:
             user_input.split(never_mind)[1]
         if numb in user_input:
-            speak()
+            speak("song_playing.sh")
         elif from_the_inside in user_input:
-            speak()
+            speak("song_playing.sh")
 
 print(rec.FinalResult())
