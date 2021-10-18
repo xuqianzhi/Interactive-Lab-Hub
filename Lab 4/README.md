@@ -1,15 +1,19 @@
 # Ph-UI!!!
 
+For this lab, I'm designing a device that would generate random recipe for you when you don't know what to eat for your lunch/dinner.
+
 ### Part C
 ### Physical considerations for sensing
-
-Usually, sensors need to positioned in specific locations or orientations to make them useful for their application. Now that you've tried a bunch of the sensors, pick one that you would like to use, and an application where you use the output of that sensor for an interaction. For example, you can use a distance sensor to measure someone's height if you position it overhead and get them to stand under it.
 
 **\*\*\*Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful.\*\*\***
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
+The first thought is just to push a button and let the device decide for you. However, people do have different feelings on each day, i.e. although the user might not know exactly what to eat, there might be a general category of food that the user would prefer. E.g., if the user don't have good appetite, the user might want to go with vegetarian foods only. That lead from 1st sketch to the 2nd sketch.
+
+So how many categories should there be? The 2nd sketch allows a fixed number of category. But what if the software gets updated along time, and the number of category keeps increasing? Then we need a scrollview! This leads to 3rd - 5th sketch.
 
 **\*\*\*Pick one of these designs to prototype.\*\*\***
+I will pick the sketch #4 because it seems like the most intuitive design that the user would understand how to use without much explanation.
 
 
 ### Part D
