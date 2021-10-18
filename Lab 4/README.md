@@ -6,6 +6,8 @@ For this lab, I'm designing a device that would generate random recipe for you w
 ### Physical considerations for sensing
 
 **\*\*\*Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful.\*\*\***
+![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%204/sketch_part1_1.jpg)
+![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%204/sketch_part1_2.jpg)
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 The first thought is just to push a button and let the device decide for you. However, people do have different feelings on each day, i.e. although the user might not know exactly what to eat, there might be a general category of food that the user would prefer. E.g., if the user don't have good appetite, the user might want to go with vegetarian foods only. That lead from 1st sketch to the 2nd sketch.
