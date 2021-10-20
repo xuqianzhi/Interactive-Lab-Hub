@@ -39,9 +39,9 @@ I will pick design 3, where the joystick is on top of the screen.
 
 As explained above, this ensure the integrity of the design and gives user just a single box. Leaving the joystick inside the box may be hard for user to manipulate, and my design of choice seem to be provide user a easy manipulation. 
 
-Build a cardbord prototype of your design.
-
 **\*\*\*Document your rough prototype.\*\*\***
+
+The design, as expected, seem to provide a easy manipulation experience. However, applying too much pressure to the joystick sometimes crushes the box, and some reinforcement need to be done to stabilize the box a bit further.
 
 
 LAB PART 2
