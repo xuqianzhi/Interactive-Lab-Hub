@@ -29,9 +29,15 @@ I will pick the sketch #4 because it seems like the most intuitive design that t
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
+Although having a long wire between the joystick and the screen allows a more flexible control experience, when I'm thinking about the use cases, I don't really see a need for that. Just based on imagination, I think it make more sense to design the product just into one integrated box, and it the box just serves a single purpose of inspiring people what to eat for their lunch/dinner.
+
 **\*\*\*Pick one of these display designs to integrate into your prototype.\*\*\***
 
+I will pick design 3, where the joystick is on top of the screen.
+
 **\*\*\*Explain the rationale for the design.\*\*\*** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
+
+As explained above, this ensure the integrity of the design and gives user just a single box. Leaving the joystick inside the box may be hard for user to manipulate, and my design of choice seem to be provide user a easy manipulation. 
 
 Build a cardbord prototype of your design.
 
