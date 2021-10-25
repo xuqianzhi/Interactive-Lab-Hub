@@ -8,6 +8,7 @@ import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 from time import strftime, sleep
+import random
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = digitalio.DigitalInOut(board.CE0)
@@ -68,6 +69,7 @@ backlight.value = True
 indicator_green = "#006400"
 font_purple = "#FF00FF"
 black = "#000000"
+white = "#FFFFFF"
 
 # slow cook recipes
 slow_foods = {}
@@ -182,7 +184,14 @@ def draw_category_screen():
 	draw.text((20, 1/4 * height + 10), text, font=font, fill=font_purple)
 
 def draw_food_screen():
-	return None
+	food_map = slow_foods if time_idx == 0 else fast_foods
+	food_set = food_map[categories[category_idx]]
+	random_food_selection = random.sample(food_set, 1)
+	text = random_food_selection
+
+	draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+	draw.text((20, 1/4 * height), "Your random food suggestion:", font=font, fill=white)
+	draw.text((20, 3/4 * height), text, font=font, fill=font_purple)
 
 if __name__ == '__main__':
 	try:
@@ -198,8 +207,8 @@ if __name__ == '__main__':
 				if is_joystick_down(joy_stick):
 					category_idx = switch_categories(category_idx)
 
-			# else:
-			# 	draw_food_screen()
+			else:
+				draw_food_screen()
 
 			if is_joystick_pressed(joy_stick):
 				screen_idx = switch_screens(screen_idx)
