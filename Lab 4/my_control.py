@@ -133,7 +133,7 @@ indicator_position = 0
 # def is_joystick_up():
 # 	return joy_stick.vertical == 1023
 
-def is_joystick_down():
+def is_joystick_down(joy_stick):
 	if joy_stick.vertical == 0:
 		indicator_position = 1
 		return True
@@ -142,25 +142,28 @@ def is_joystick_down():
 # 	indicator_position = 0
 # 	return joy_stick.horizontal == 0
 
-def is_joystick_pressed():
+def is_joystick_pressed(joy_stick):
 	if joy_stick.button == 0:
 		indicator_position = 0
 		return True
 
 screens = ["time", "category", "food"]
 screen_idx = 0
-def switch_screens():
+def switch_screens(screen_idx):
 	screen_idx = 0 if screen_idx == len(screens) - 1 else screen_idx + 1
+	return screen_idx
 
 times = ["slow cooking", "fast cooking"]
 time_idx = 0
-def switch_cook_time():
+def switch_cook_time(time_idx):
 	time_idx = 0 if time_idx == len(times) - 1 else time_idx + 1
+	return time_idx
 
 categories = ["beef", "chicken", "pork", "vegetarian"]
 category_idx = 0
-def switch_categories():
+def switch_categories(category_idx):
 	category_idx = 0 if category_idx == len(categories) - 1 else category_idx + 1
+	return category_idx
 
 def draw_time_screen():
 	draw.rectangle((0, height/2 * indicator_position, width, height/2), outline=0, fill=indicator_green)
@@ -172,28 +175,26 @@ def draw_category_screen():
 def draw_food_screen():
 	return None
 
-def run():
-	screen = screens[screen_idx]
-	if screen == "time":
-		draw_time_screen()
-		if is_joystick_down():
-			switch_cook_time()
-
-	elif screen == "category":
-		draw_category_screen()
-		if is_joystick_down():
-			switch_categories()
-
-	else:
-		draw_food_screen()
-
-	if is_joystick_pressed():
-		switch_screens()
-
 if __name__ == '__main__':
 	try:
 		while True:
-			run()
+			screen = screens[screen_idx]
+			if screen == "time":
+				draw_time_screen()
+				if is_joystick_down(joy_stick):
+					switch_cook_time(time_idx)
+
+			# elif screen == "category":
+			# 	draw_category_screen()
+			# 	if is_joystick_down(joy_stick):
+			# 		switch_categories(category_idx)
+
+			# else:
+			# 	draw_food_screen()
+
+			# if is_joystick_pressed(joy_stick):
+			# 	switch_screens(screen_idx)
+
 			disp.image(image, rotation)
 			time.sleep(1)
 	except (KeyboardInterrupt, SystemExit) as exErr:
