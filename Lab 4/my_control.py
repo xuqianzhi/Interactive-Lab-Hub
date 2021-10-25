@@ -147,9 +147,13 @@ def is_joystick_pressed(joy_stick):
 		return True
 
 def draw_indicator():
+	# indicator box
 	start_height = 1 / 4 * height
 	end_height = 3 / 4 * height
 	draw.rectangle((0, start_height, width, end_height), outline=0, fill=indicator_green)
+
+	# indicator arrow
+	ImageDraw.regular_polygon((width / 2, height - 20, 10), 3, rotation=0, fill=None, outline=None)
 
 screens = ["time", "category", "food"]
 screen_idx = 0
@@ -171,7 +175,7 @@ def switch_categories(category_idx):
 
 def draw_time_screen():
 	draw_indicator()
-	draw.text((20, 20), "Hello World", font=font, fill=font_purple)
+	draw.text((20, 1/4 * height + 10), "Hello World", font=font, fill=font_purple)
 
 def draw_category_screen():
 	return None
