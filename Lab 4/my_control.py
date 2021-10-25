@@ -146,13 +146,10 @@ def is_joystick_pressed(joy_stick):
 	if joy_stick.button == 0:
 		return True
 
-def draw_indicator_box():
-	green_start_height = indicator_position * height / 2
-	green_end_height = height if indicator_position == 1 else height / 2
-	black_start_height = (1 - indicator_position) * height / 2
-	black_end_height = height if indicator_position == 0 else height / 2
-	draw.rectangle((0, green_start_height, width, green_end_height), outline=0, fill=indicator_green)
-	draw.rectangle((0, black_start_height, width, black_end_height), outline=0, fill=black)
+def draw_indicator():
+	start_height = 1 / 4 * height
+	end_height = 3 / 4 * height
+	draw.rectangle((0, start_height, width, end_height), outline=0, fill=indicator_green)
 
 screens = ["time", "category", "food"]
 screen_idx = 0
@@ -173,7 +170,7 @@ def switch_categories(category_idx):
 	return category_idx
 
 def draw_time_screen():
-	draw_indicator_box()
+	draw_indicator()
 	draw.text((20, 20), "Hello World", font=font, fill=font_purple)
 
 def draw_category_screen():
