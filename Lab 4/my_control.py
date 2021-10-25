@@ -131,6 +131,8 @@ if joy_stick.connected == False:
 
 joy_stick.begin()
 
+random_food_selection = ""
+
 # def is_joystick_up():
 # 	return joy_stick.vertical == 1023
 
@@ -184,15 +186,18 @@ def draw_category_screen():
 	draw.text((20, 1/4 * height + 10), text, font=font, fill=font_purple)
 
 def draw_food_screen():
-	food_map = slow_foods if time_idx == 0 else fast_foods
-	food_set = food_map[categories[category_idx]]
-	random_food_selection = random.sample(food_set, 1)
-	text = random_food_selection
-	print(text)
+	if random_food_selection == "":
+		food_map = slow_foods if time_idx == 0 else fast_foods
+		food_set = food_map[categories[category_idx]]
+		random_food_selection = random.sample(food_set, 1)[0]
+		text = random_food_selection
+	else:
+		text = random_food_selection
 
 	draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-	draw.text((20, 1/4 * height), "Your random food suggestion:", font=font, fill=white)
-	# draw.text((20, 3/4 * height), text, font=font, fill=font_purple)
+	draw.text((20, 1/4 * height), "Your food suggestion:", font=font, fill=white)
+	draw.text((20, 3/4 * height), text, font=font, fill=font_purple)
+	return text
 
 if __name__ == '__main__':
 	try:
@@ -209,10 +214,11 @@ if __name__ == '__main__':
 					category_idx = switch_categories(category_idx)
 
 			else:
-				draw_food_screen()
+				random_food_selection = draw_food_screen()
 
 			if is_joystick_pressed(joy_stick):
 				screen_idx = switch_screens(screen_idx)
+				random_food_selection = ""
 
 			disp.image(image, rotation)
 			time.sleep(0.1)
