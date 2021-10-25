@@ -166,6 +166,7 @@ def switch_categories(category_idx):
 	return category_idx
 
 def draw_time_screen():
+	print(indicator_position)
 	draw.rectangle((0, height/2 * indicator_position, width, height/2), outline=0, fill=indicator_green)
 	draw.text((20, 20), "Hello World", font=font, fill=font_purple)
 
