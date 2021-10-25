@@ -221,7 +221,7 @@ if __name__ == '__main__':
 				random_food_selection = ""
 
 			disp.image(image, rotation)
-			time.sleep(0.3)
+			time.sleep(0.2)
 	except (KeyboardInterrupt, SystemExit) as exErr:
 		print("\nEnding Example 1")
 		sys.exit(0)
