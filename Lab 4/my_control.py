@@ -183,6 +183,8 @@ if __name__ == '__main__':
 	try:
 		while True:
 			run()
+			disp.image(image, rotation)
+		    time.sleep(1)
 	except (KeyboardInterrupt, SystemExit) as exErr:
 		print("\nEnding Example 1")
 		sys.exit(0)
