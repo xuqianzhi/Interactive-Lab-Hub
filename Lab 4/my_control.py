@@ -67,6 +67,7 @@ backlight.value = True
 # color code
 indicator_green = "#006400"
 font_purple = "#FF00FF"
+black = "#000000"
 
 # slow cook recipes
 slow_foods = {}
@@ -165,7 +166,8 @@ def switch_categories(category_idx):
 
 def draw_time_screen():
 	print(indicator_position)
-	draw.rectangle((0, height/2 * 1, width, height/2), outline=0, fill=indicator_green)
+	draw.rectangle((0, 40, width, height/2), outline=0, fill=indicator_green)
+	# draw.rectangle((0, height / 2 * (1 - indicator_position), width, height/2), outline=0, fill=indicator_green)
 	draw.text((20, 20), "Hello World", font=font, fill=font_purple)
 
 def draw_category_screen():
