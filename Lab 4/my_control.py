@@ -153,7 +153,7 @@ def draw_indicator():
 	draw.rectangle((0, start_height, width, end_height), outline=0, fill=indicator_green)
 
 	# indicator arrow
-	ImageDraw.regular_polygon((width / 2, height - 20, 10), 3, rotation=0, fill=None, outline=None)
+	draw.regular_polygon((width / 2, height - 20, 10), 3, rotation=0, fill=None, outline=None)
 
 screens = ["time", "category", "food"]
 screen_idx = 0
