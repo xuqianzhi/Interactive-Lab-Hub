@@ -82,7 +82,7 @@ slow_beef_set.add("beef stew")
 slow_beef_set.add("beef wellington")
 slow_beef_set.add("Beef Bourguignon")
 
-slow_chicken_set.add("Pan Seared Chicken Breast")
+slow_chicken_set.add("Roast Chicken Breast")
 slow_chicken_set.add("KFC Fried Chicken")
 slow_chicken_set.add("Roast Whole Chicken")
 
@@ -91,7 +91,7 @@ slow_pork_set.add("Roast pork belly")
 
 slow_vegetarian_set.add("Vegetarian meatball")
 slow_vegetarian_set.add("Falafel")
-slow_vegetarian_set.add("Pan roast cauliflower steak")
+slow_vegetarian_set.add("Pan roast cauliflower")
 
 slow_foods["beef"] = slow_beef_set
 slow_foods["chicken"] = slow_chicken_set
@@ -223,5 +223,5 @@ if __name__ == '__main__':
 			disp.image(image, rotation)
 			time.sleep(0.2)
 	except (KeyboardInterrupt, SystemExit) as exErr:
-		print("\nEnding Example 1")
+		print("\n Terminating")
 		sys.exit(0)
