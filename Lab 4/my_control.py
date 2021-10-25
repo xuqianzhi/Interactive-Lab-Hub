@@ -152,7 +152,7 @@ def draw_indicator_box():
 	black_start_height = (1 - indicator_position) * height / 2
 	black_end_height = height if indicator_position == 0 else height / 2
 	draw.rectangle((0, green_start_height, width, green_end_height), outline=0, fill=indicator_green)
-	draw.rectangle((0, black_start_height, width, black_end_height), outline=0, fill=indicator_green)
+	draw.rectangle((0, black_start_height, width, black_end_height), outline=0, fill=black)
 
 screens = ["time", "category", "food"]
 screen_idx = 0
