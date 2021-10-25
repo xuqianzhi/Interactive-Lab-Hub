@@ -64,6 +64,10 @@ backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
+# color code
+indicator_green = "#006400"
+font_purple = "#FF00FF"
+
 # slow cook recipes
 slow_foods = {}
 slow_beef_set = set()
@@ -152,8 +156,8 @@ def switch_categories():
 	category_idx = 0 if category_idx == len(categories) - 1 else category_idx + 1
 
 def draw_time_screen():
-	draw.rectangle((20, 20, width - 20, height - 20), outline=0, fill="#FF00FF")
-	draw.text((20, 20), "Hello World", font=font, fill="#FF0000")
+	draw.rectangle((0, 0, width, height/2), outline=0, fill=indicator_green)
+	draw.text((20, 20), "Hello World", font=font, fill=font_purple)
 
 def draw_category_screen():
 	return None
