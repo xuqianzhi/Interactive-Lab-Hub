@@ -185,7 +185,7 @@ def draw_category_screen():
 	text = categories[category_idx]
 	draw.text((20, 1/4 * height + 10), text, font=font, fill=font_purple)
 
-def draw_food_screen():
+def draw_food_screen(random_food_selection):
 	if random_food_selection == "":
 		food_map = slow_foods if time_idx == 0 else fast_foods
 		food_set = food_map[categories[category_idx]]
@@ -214,7 +214,7 @@ if __name__ == '__main__':
 					category_idx = switch_categories(category_idx)
 
 			else:
-				random_food_selection = draw_food_screen()
+				random_food_selection = draw_food_screen(random_food_selection)
 
 			if is_joystick_pressed(joy_stick):
 				screen_idx = switch_screens(screen_idx)
