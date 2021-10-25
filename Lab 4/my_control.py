@@ -176,7 +176,8 @@ def switch_categories(category_idx):
 
 def draw_time_screen():
 	draw_indicator()
-	draw.text((20, 1/4 * height + 10), "Hello World", font=font, fill=font_purple)
+	text = times[time_idx]
+	draw.text((20, 1/4 * height + 10), text, font=font, fill=font_purple)
 
 def draw_category_screen():
 	return None
@@ -192,7 +193,7 @@ if __name__ == '__main__':
 				draw_time_screen()
 				if is_joystick_down(joy_stick):
 					indicator_position = 1
-					switch_cook_time(time_idx)
+					time_idx = switch_cook_time(time_idx)
 
 			# elif screen == "category":
 			# 	draw_category_screen()
