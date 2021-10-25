@@ -58,7 +58,7 @@ Document all the prototypes and iterations you have designed and worked on! Agai
 * "Works like": shows what the device can do
 * "Acts like": shows how a person would interact with the device
 
-I got a very good peer feedback that suggested me to apply this device at a restaurant/foodtruck instead of for home cooking. Therefore, for part 2, I am changing my use case scenario to be at restaurants, and my device would take people's general preference/demand, and suggest people random dishes that lies in the selected category.
+I got a very good peer feedback that suggested me to apply this device at a restaurant/foodtruck instead of for home cooking. Therefore, for part 2, I am changing my use case scenario to be at restaurants, and my device would take people's general preference/demand, and suggest people random dishes that lies in the selected category. I am also adding a selection option that allow users to choose between slow cooking and fast cooking dishes, since people may be in a rush and just want a quick meal at a restaurant.
 
 The device is like a little hand-held device that allows users to handle easily. This is to consider the possibility that people might want to pass this around the table and make decision for multiple people. Also, not everyone would want to get suggestion from this device, so it does not make sense to mount this device at a fixed position (e.g. at the table).
 
