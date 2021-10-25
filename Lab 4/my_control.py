@@ -195,16 +195,15 @@ if __name__ == '__main__':
 					indicator_position = 1
 					time_idx = switch_cook_time(time_idx)
 
-			# elif screen == "category":
-			# 	draw_category_screen()
-			# 	if is_joystick_down(joy_stick):
-			# 		switch_categories(category_idx)
+			elif screen == "category":
+				draw_category_screen()
+				if is_joystick_down(joy_stick):
+					switch_categories(category_idx)
 
 			# else:
 			# 	draw_food_screen()
 
 			if is_joystick_pressed(joy_stick):
-				print("here")
 				screen_idx = switch_screens(screen_idx)
 
 			disp.image(image, rotation)
