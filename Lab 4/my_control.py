@@ -64,120 +64,120 @@ backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
-# # slow cook recipes
-# slow_foods = {}
-# slow_beef_set = set()
-# slow_chicken_set = set()
-# slow_pork_set = set()
-# slow_vegetarian_set = set()
+# slow cook recipes
+slow_foods = {}
+slow_beef_set = set()
+slow_chicken_set = set()
+slow_pork_set = set()
+slow_vegetarian_set = set()
 
-# slow_beef_set.add("beef stew")
-# slow_beef_set.add("beef wellington")
-# slow_beef_set.add("Beef Bourguignon")
+slow_beef_set.add("beef stew")
+slow_beef_set.add("beef wellington")
+slow_beef_set.add("Beef Bourguignon")
 
-# slow_chicken_set.add("Pan Seared Chicken Breast")
-# slow_chicken_set.add("KFC Fried Chicken")
-# slow_chicken_set.add("Roast Whole Chicken")
+slow_chicken_set.add("Pan Seared Chicken Breast")
+slow_chicken_set.add("KFC Fried Chicken")
+slow_chicken_set.add("Roast Whole Chicken")
 
-# slow_pork_set.add("Oven Roast Pork ribs")
-# slow_pork_set.add("Roast pork belly")
+slow_pork_set.add("Oven Roast Pork ribs")
+slow_pork_set.add("Roast pork belly")
 
-# slow_vegetarian_set.add("Vegetarian meatball")
-# slow_vegetarian_set.add("Falafel")
-# slow_vegetarian_set.add("Pan roast cauliflower steak")
+slow_vegetarian_set.add("Vegetarian meatball")
+slow_vegetarian_set.add("Falafel")
+slow_vegetarian_set.add("Pan roast cauliflower steak")
 
-# slow_foods["beef"] = slow_beef_set
-# slow_foods["chicken"] = slow_chicken_set
-# slow_foods["pork"] = slow_pork_set
-# slow_foods["vegetarian"] = slow_vegetarian_set
+slow_foods["beef"] = slow_beef_set
+slow_foods["chicken"] = slow_chicken_set
+slow_foods["pork"] = slow_pork_set
+slow_foods["vegetarian"] = slow_vegetarian_set
 
-# # fast cook recipes
-# fast_foods = {}
-# fast_beef_set = set()
-# fast_chicken_set = set()
-# fast_pork_set = set()
-# fast_vegetarian_set = set()
+# fast cook recipes
+fast_foods = {}
+fast_beef_set = set()
+fast_chicken_set = set()
+fast_pork_set = set()
+fast_vegetarian_set = set()
 
-# fast_beef_set.add("Beef curry")
-# fast_beef_set.add("Steak")
+fast_beef_set.add("Beef curry")
+fast_beef_set.add("Steak")
 
-# fast_chicken_set.add("Chicken Tikka")
-# fast_chicken_set.add("Tandoori Chicken")
+fast_chicken_set.add("Chicken Tikka")
+fast_chicken_set.add("Tandoori Chicken")
 
-# fast_pork_set.add("Pan seared pork chop")
+fast_pork_set.add("Pan seared pork chop")
 
-# fast_vegetarian_set.add("Salad")
-# fast_vegetarian_set.add("Kung Bao Tofu")
-# fast_vegetarian_set.add("Cauliflower curry")
+fast_vegetarian_set.add("Salad")
+fast_vegetarian_set.add("Kung Bao Tofu")
+fast_vegetarian_set.add("Cauliflower curry")
 
-# fast_foods["beef"] = fast_beef_set
-# fast_foods["chicken"] = fast_chicken_set
-# fast_foods["pork"] = fast_pork_set
-# fast_foods["vegetarian"] = fast_vegetarian_set
+fast_foods["beef"] = fast_beef_set
+fast_foods["chicken"] = fast_chicken_set
+fast_foods["pork"] = fast_pork_set
+fast_foods["vegetarian"] = fast_vegetarian_set
 
-# # initialize joystick
-# joy_stick = qwiic_joystick.QwiicJoystick()
+# initialize joystick
+joy_stick = qwiic_joystick.QwiicJoystick()
 
-# if joy_stick.connected == False:
-# 	print("The Qwiic Joystick device isn't connected to the system. Please check your connection", file=sys.stderr)
-# 	joy_stick = None
+if joy_stick.connected == False:
+	print("The Qwiic Joystick device isn't connected to the system. Please check your connection", file=sys.stderr)
+	joy_stick = None
 
-# joy_stick.begin()
+joy_stick.begin()
 
-# # def is_joystick_up():
-# # 	return joy_stick.vertical == 1023
+# def is_joystick_up():
+# 	return joy_stick.vertical == 1023
 
-# def is_joystick_down():
-# 	return joy_stick.vertical == 0	
+def is_joystick_down():
+	return joy_stick.vertical == 0	
 
-# def is_joystick_back():
-# 	return joy_stick.horizontal == 0
+def is_joystick_back():
+	return joy_stick.horizontal == 0
 
-# def is_joystick_pressed():
-# 	return joy_stick.button == 0
+def is_joystick_pressed():
+	return joy_stick.button == 0
 
-# screens = ["time", "category", "food"]
-# screen_idx = 0
-# def switch_screens():
-# 	screen_idx = 0 if screen_idx == len(screens) - 1 else screen_idx + 1
+screens = ["time", "category", "food"]
+screen_idx = 0
+def switch_screens():
+	screen_idx = 0 if screen_idx == len(screens) - 1 else screen_idx + 1
 
-# times = ["slow cooking", "fast cooking"]
-# time_idx = 0
-# def switch_cook_time():
-# 	time_idx = 0 if time_idx == len(times) - 1 else time_idx + 1
+times = ["slow cooking", "fast cooking"]
+time_idx = 0
+def switch_cook_time():
+	time_idx = 0 if time_idx == len(times) - 1 else time_idx + 1
 
-# categories = ["beef", "chicken", "pork", "vegetarian"]
-# category_idx = 0
-# def switch_categories():
-# 	category_idx = 0 if category_idx == len(categories) - 1 else category_idx + 1
+categories = ["beef", "chicken", "pork", "vegetarian"]
+category_idx = 0
+def switch_categories():
+	category_idx = 0 if category_idx == len(categories) - 1 else category_idx + 1
 
-# def draw_time_screen():
-# 	return None
+def draw_time_screen():
+	draw.rectangle((20, 20, width - 20, height - 20), outline=0, fill="#FF00FF")
+	draw.text((20, 20), "Hello World", font=font, fill="#FF0000")
 
-# def draw_category_screen():
-# 	return None
+def draw_category_screen():
+	return None
 
-# def draw_food_screen():
-# 	return None
+def draw_food_screen():
+	return None
 
 def run():
-	draw.text((0, 0), "Hello World", font=font, fill="#FF00FF")
-	# screen = screens[screen_idx]
-	# if screen == "time":
-	# 	draw_time_screen()
-	# 	if is_joystick_down():
-	# 		switch_cook_time()
+	screen = screens[screen_idx]
+	if screen == "time":
+		draw_time_screen()
+		if is_joystick_down():
+			switch_cook_time()
 
-	# elif screen == "category":
-	# 	draw_category_screen()
-	# 	if is_joystick_down():
-	# 		switch_categories()
+	elif screen == "category":
+		draw_category_screen()
+		if is_joystick_down():
+			switch_categories()
 
-	# else:
-	# 	draw_food_screen()
+	else:
+		draw_food_screen()
 
-	# if is_joystick_pressed():
-	# 	switch_screens()
+	if is_joystick_pressed():
+		switch_screens()
 
 if __name__ == '__main__':
 	try:
