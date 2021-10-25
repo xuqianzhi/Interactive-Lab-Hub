@@ -196,7 +196,7 @@ def draw_food_screen(random_food_selection):
 
 	draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 	draw.text((20, 1/4 * height), "Your food suggestion:", font=font, fill=white)
-	draw.text((20, 3/4 * height), text, font=font, fill=font_purple)
+	draw.text((20, 1/4 * height + 10), text, font=font, fill=font_purple)
 	return text
 
 if __name__ == '__main__':
@@ -221,7 +221,7 @@ if __name__ == '__main__':
 				random_food_selection = ""
 
 			disp.image(image, rotation)
-			time.sleep(0.1)
+			time.sleep(0.3)
 	except (KeyboardInterrupt, SystemExit) as exErr:
 		print("\nEnding Example 1")
 		sys.exit(0)
