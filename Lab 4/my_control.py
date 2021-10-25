@@ -188,10 +188,11 @@ def draw_food_screen():
 	food_set = food_map[categories[category_idx]]
 	random_food_selection = random.sample(food_set, 1)
 	text = random_food_selection
+	print(text)
 
 	draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 	draw.text((20, 1/4 * height), "Your random food suggestion:", font=font, fill=white)
-	draw.text((20, 3/4 * height), text, font=font, fill=font_purple)
+	# draw.text((20, 3/4 * height), text, font=font, fill=font_purple)
 
 if __name__ == '__main__':
 	try:
