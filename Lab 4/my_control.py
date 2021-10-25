@@ -128,17 +128,24 @@ if joy_stick.connected == False:
 
 joy_stick.begin()
 
+indicator_position = 0
+
 # def is_joystick_up():
 # 	return joy_stick.vertical == 1023
 
 def is_joystick_down():
-	return joy_stick.vertical == 0	
+	if joy_stick.vertical == 0:
+		indicator_position = 1
+		return True
 
-def is_joystick_back():
-	return joy_stick.horizontal == 0
+# def is_joystick_back():
+# 	indicator_position = 0
+# 	return joy_stick.horizontal == 0
 
 def is_joystick_pressed():
-	return joy_stick.button == 0
+	if joy_stick.button == 0:
+		indicator_position = 0
+		return True
 
 screens = ["time", "category", "food"]
 screen_idx = 0
@@ -156,7 +163,7 @@ def switch_categories():
 	category_idx = 0 if category_idx == len(categories) - 1 else category_idx + 1
 
 def draw_time_screen():
-	draw.rectangle((0, 0, width, height/2), outline=0, fill=indicator_green)
+	draw.rectangle((0, height/2 * indicator_position, width, height/2), outline=0, fill=indicator_green)
 	draw.text((20, 20), "Hello World", font=font, fill=font_purple)
 
 def draw_category_screen():
