@@ -134,6 +134,7 @@ indicator_position = 0
 # 	return joy_stick.vertical == 1023
 
 def is_joystick_down(joy_stick):
+	print(joy_stick.vertical)
 	if joy_stick.vertical == 0:
 		indicator_position = 1
 		return True
@@ -166,7 +167,6 @@ def switch_categories(category_idx):
 	return category_idx
 
 def draw_time_screen():
-	print(indicator_position)
 	draw.rectangle((0, height/2 * indicator_position, width, height/2), outline=0, fill=indicator_green)
 	draw.text((20, 20), "Hello World", font=font, fill=font_purple)
 
@@ -197,7 +197,7 @@ if __name__ == '__main__':
 			# 	switch_screens(screen_idx)
 
 			disp.image(image, rotation)
-			time.sleep(1)
+			time.sleep(0.1)
 	except (KeyboardInterrupt, SystemExit) as exErr:
 		print("\nEnding Example 1")
 		sys.exit(0)
