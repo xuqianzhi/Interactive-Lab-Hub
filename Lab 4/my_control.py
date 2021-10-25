@@ -203,8 +203,8 @@ if __name__ == '__main__':
 			# else:
 			# 	draw_food_screen()
 
-			# if is_joystick_pressed(joy_stick):
-			# 	switch_screens(screen_idx)
+			if is_joystick_pressed(joy_stick):
+				switch_screens(screen_idx)
 
 			disp.image(image, rotation)
 			time.sleep(0.1)
