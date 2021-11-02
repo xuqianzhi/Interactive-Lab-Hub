@@ -42,11 +42,9 @@ The nice thing about teachable machine is that you can train it to identify cust
 ### Part B
 ### Construct a simple interaction.
 
-Pick one of the models you have tried, pick a class of objects, and experiment with prototyping an interaction.
-This can be as simple as the boat detector earlier.
-Try out different interaction outputs and inputs.
-
 **\*\*\*Describe and detail the interaction, as well as your experimentation here.\*\*\***
+
+Pan detector: a detector to detect the existance of a pan on the stove, and make decision on turning on/off the hood, light, etc.
 
 ### Part C
 ### Test the interaction prototype
