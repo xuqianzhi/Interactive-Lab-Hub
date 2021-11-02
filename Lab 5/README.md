@@ -56,11 +56,15 @@ For example:
 1. When it fails, why does it fail?
 1. Based on the behavior you have seen, what other scenarios could cause problems?
 
+If you train the model to recognize a sauce pan, then when you put a wok/dutch oven on the stove, the model fail to recognize that as a pan
+
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
 1. How bad would they be impacted by a miss classification?
 1. How could change your interactive system to address this?
 1. Are there optimizations you can try to do on your sense-making algorithm.
+
+The user of the system should not be aware of the uncertainty of the system, and it should walk toward the kitchen with confidence that the lights and hood will be turned on. Any of the uncertainty will cause extreme annoyance, and the user should just prefer using a physical button to switch them. 
 
 ### Part D
 ### Characterize your own Observant system
