@@ -2,6 +2,7 @@
 ### Play with different sense-making algorithms.
 
 **\*\*\*Try each of the following four examples in the `openCV-examples`, include screenshots of your use and write about one design for each example that might work based on the individual benefits to each algorithm.\*\*\***
+
 Contour
 ![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%205/screen_shots/contour.png)
 Face Detection
