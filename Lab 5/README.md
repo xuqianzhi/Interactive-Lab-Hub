@@ -1,104 +1,16 @@
-# Observant Systems
-
-
-For lab this week, we focus on creating interactive systems that can detect and respond to events or stimuli in the environment of the Pi, like the Boat Detector we mentioned in lecture. 
-Your **observant device** could, for example, count items, find objects, recognize an event or continuously monitor a room.
-
-This lab will help you think through the design of observant systems, particularly corner cases that the algorithms needs to be aware of.
-
-## Prep
-
-1.  Pull the new Github Repo.
-2.  Install VNC on your laptop if you have not yet done so. This lab will actually require you to run script on your Pi through VNC so that you can see the video stream. Please refer to the [prep for Lab 2](https://github.com/FAR-Lab/Interactive-Lab-Hub/blob/Fall2021/Lab%202/prep.md), we offered the instruction at the bottom.
-3.  Read about [OpenCV](https://opencv.org/about/), [MediaPipe](https://mediapipe.dev/), and [TeachableMachines](https://teachablemachine.withgoogle.com/).
-4.  Read Belloti, et al.'s [Making Sense of Sensing Systems: Five Questions for Designers and Researchers](https://www.cc.gatech.edu/~keith/pubs/chi2002-sensing.pdf).
-
-### For the lab, you will need:
-
-1. Raspberry Pi
-1. Webcam 
-1. Microphone (if you want to have speech or sound input for your design)
-
-### Deliverables for this lab are:
-1. Show pictures, videos of the "sense-making" algorithms you tried.
-1. Show a video of how you embed one of these algorithms into your observant system.
-1. Test, characterize your interactive device. Show faults in the detection and how the system handled it.
-
-## Overview
-Building upon the paper-airplane metaphor (we're understanding the material of machine learning for design), here are the four sections of the lab activity:
-
-A) [Play](#part-a)
-
-B) [Fold](#part-b)
-
-C) [Flight test](#part-c)
-
-D) [Reflect](#part-d)
-
----
-
 ### Part A
 ### Play with different sense-making algorithms.
 
-#### OpenCV
-A more traditional method to extract information out of images is provided with OpenCV. The RPI image provided to you comes with an optimized installation that can be accessed through python. We included 4 standard OpenCV examples: contour(blob) detection, face detection with the ``Haarcascade``, flow detection (a type of keypoint tracking), and standard object detection with the [Yolo](https://pjreddie.com/darknet/yolo/) darknet.
-
-Most examples can be run with a screen (e.g. VNC or ssh -X or with an HDMI monitor), or with just the terminal. The examples are separated out into different folders. Each folder contains a ```HowToUse.md``` file, which explains how to run the python example. 
-
-Following is a nicer way you can run and see the flow of the `openCV-examples` we have included in your Pi. Instead of `ls`, the command we will be using here is `tree`. [Tree](http://mama.indstate.edu/users/ice/tree/) is a recursive directory colored listing command that produces a depth indented listing of files. Install `tree` first and `cd` to the `openCV-examples` folder and run the command:
-
-```shell
-pi@ixe00:~ $ sudo apt install tree
-...
-pi@ixe00:~ $ cd openCV-examples
-pi@ixe00:~/openCV-examples $ tree -l
-.
-├── contours-detection
-│   ├── contours.py
-│   └── HowToUse.md
-├── data
-│   ├── slow_traffic_small.mp4
-│   └── test.jpg
-├── face-detection
-│   ├── face-detection.py
-│   ├── faces_detected.jpg
-│   ├── haarcascade_eye_tree_eyeglasses.xml
-│   ├── haarcascade_eye.xml
-│   ├── haarcascade_frontalface_alt.xml
-│   ├── haarcascade_frontalface_default.xml
-│   └── HowToUse.md
-├── flow-detection
-│   ├── flow.png
-│   ├── HowToUse.md
-│   └── optical_flow.py
-└── object-detection
-    ├── detected_out.jpg
-    ├── detect.py
-    ├── frozen_inference_graph.pb
-    ├── HowToUse.md
-    └── ssd_mobilenet_v2_coco_2018_03_29.pbtxt
-```
-
-The flow detection might seem random, but consider [this recent research](https://cseweb.ucsd.edu/~lriek/papers/taylor-icra-2021.pdf) that uses optical flow to determine busy-ness in hospital settings to facilitate robot navigation. Note the velocity parameter on page 3 and the mentions of optical flow.
-
-Now, connect your webcam to your Pi and use **VNC to access to your Pi** and open the terminal. Use the following command lines to try each of the examples we provided:
-(***it will not work if you use ssh from your laptop***)
-
-```
-pi@ixe00:~$ cd ~/openCV-examples/contours-detection
-pi@ixe00:~/openCV-examples/contours-detection $ python contours.py
-...
-pi@ixe00:~$ cd ~/openCV-examples/face-detection
-pi@ixe00:~/openCV-examples/face-detection $ python face-detection.py
-...
-pi@ixe00:~$ cd ~/openCV-examples/flow-detection
-pi@ixe00:~/openCV-examples/flow-detection $ python optical_flow.py 0 window
-...
-pi@ixe00:~$ cd ~/openCV-examples/object-detection
-pi@ixe00:~/openCV-examples/object-detection $ python detect.py
-```
-
 **\*\*\*Try each of the following four examples in the `openCV-examples`, include screenshots of your use and write about one design for each example that might work based on the individual benefits to each algorithm.\*\*\***
+Contour
+![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%205/screen_shots/contour.png)
+Face Detection
+![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%205/screen_shots/face-detection.png)
+Object Detection
+![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%205/screen_shots/object-detect.png)
+Optical Flow
+![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%205/screen_shots/optical-flow.png)
+
 
 #### MediaPipe
 
