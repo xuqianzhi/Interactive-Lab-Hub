@@ -11,7 +11,7 @@ Face Detection: back to my design in lab1, where people waiting for the elevator
 
 ![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%205/screen_shots/face-detection.png)
 
-Object Detection: since object detection is capable of counting the number of objects in a image, it can be very useful in any kind of autonomous motion.
+Object Detection: since object detection is capable of counting the number of objects in a image, it can be very useful in any kind of autonomous motion to avoid collision.
 
 ![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%205/screen_shots/object-detect.png)
 
@@ -27,16 +27,17 @@ Optical Flow: optical flow is very useful for motion detection, and it can be us
 Screenshots:
 ![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%205/screen_shots/hand_tracking.png)
 
-(You might also consider how this notion of percentage control with hand tracking might be used in some of the physical UI you may have experimented with in the last lab, for instance in controlling a servo or rotary encoder.)
+The hand/body detection can be used in Virtual Reality/Augmented Reality interaction in general, for example your hand that are being tracked can be used to pickup and move a virtual apple.
 
 
 #### Teachable Machines
 
 **\*\*\*Whether you make your own model or not, include screenshots of your use of Teachable Machines, and write how you might use this to create your own classifier. Include what different affordances this method brings, compared to the OpenCV or MediaPipe options.\*\*\***
 
-ScreenShot
+ScreenShot:
 ![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%205/screen_shots/teachable_machine.png)
 
+The nice thing about teachable machine is that you can train it to identify customizable things. This way you can train it to identify many different things, such as a water bottle, a speaker, etc.
 
 ### Part B
 ### Construct a simple interaction.
