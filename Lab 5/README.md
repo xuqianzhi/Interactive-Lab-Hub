@@ -3,9 +3,10 @@
 
 **\*\*\*Try each of the following four examples in the `openCV-examples`, include screenshots of your use and write about one design for each example that might work based on the individual benefits to each algorithm.\*\*\***
 
-Contour
+Contour: contour is very similar to the edge detection in computer vision, and it essentially sketch the contour of the image. One potential application might be painting tutorial/assistant. The software can break down the painting process into 2 steps: first it assist the painting of the contour, then it assist the painting of the entire image.
 ![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%205/screen_shots/contour.png)
-Face Detection
+
+Face Detection: back to my design in lab1, where people waiting for the elevator will be alerted if someone is getting out of the elevator at the current floor (https://github.com/xuqianzhi/Interactive-Lab-Hub/tree/Fall2021/Lab%201). Face detection can be very well applied in this design as a sensing algorithm to detect whether someone is in the elevator or not.
 ![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%205/screen_shots/face-detection.png)
 Object Detection
 ![alt text](https://github.com/xuqianzhi/Interactive-Lab-Hub/blob/Fall2021/Lab%205/screen_shots/object-detect.png)
