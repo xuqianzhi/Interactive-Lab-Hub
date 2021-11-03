@@ -87,6 +87,8 @@ The Pan Detector may come in handy when the user really wish to cook, but it fee
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
+https://youtu.be/5PJMz4wX-OI
+
 ### Part 2.
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
