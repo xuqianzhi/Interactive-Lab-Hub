@@ -79,6 +79,12 @@ During the lecture, we mentioned questions to help characterize a material:
 * What are other properties/behaviors of X?
 * How does X feel?
 
+The Pan Detector can be used to detect whether the user have started cooking, and automatically switch on/off the stove/hood. 
+
+Assuming the model is trained with a saute pan, the good environment is when the user actually want to start cooking with a saute pan, but a bad environment is when the user is cooking with some other pan, such as dutch oven or wok; another bad environment is stove is used as a storage space and the user only wish to leave the pan on the stove without intention of cooking. If instead of using teachable machine, we use other framework such as OpenCV object detection, then the good environment stay the same, but a bad environment is when other object (e.g. a plate) is placed on the stove but the user has no intention to start cooking. Those bad environment is also when the Pan Detector will break.
+
+The Pan Detector may come in handy when the user really wish to cook, but it feels annoying if: 1. the user wish to cook but the system fail to detect and fail to switch on the stove/hood; 2. the user has no intention to cook but the stove/hood.
+
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
 ### Part 2.
