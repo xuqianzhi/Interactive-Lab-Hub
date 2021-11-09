@@ -64,7 +64,7 @@ while(True):
                #draw a red rectangle around detected objects
                cv2.rectangle(img, (int(left), int(top)), (int(right), int(bottom)), (0, 0, 255), thickness=2)
 
-   if object_exist:
+   if (object_exist):
       # reset the timer
       start = time.time()
    else:
