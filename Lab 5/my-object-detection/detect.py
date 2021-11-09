@@ -51,6 +51,9 @@ while(True):
             right = detection[5] * cols
             bottom = detection[6] * rows
 
+            print(right - left)
+            print(top - bottom)
+
             #draw a red rectangle around detected objects
             cv2.rectangle(img, (int(left), int(top)), (int(right), int(bottom)), (0, 0, 255), thickness=2)
 
