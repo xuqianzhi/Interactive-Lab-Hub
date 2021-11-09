@@ -87,8 +87,20 @@ The Pan Detector may come in handy when the user really wish to cook, but it fee
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
+https://youtu.be/5PJMz4wX-OI
+
 ### Part 2.
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
+
+Instead of trying to identify a pan, wok, dutch oven, etc using a trained model, it is actually easier and more reasonable to identify if there's no pan at at using simple object detection. This is to consider the following 2 use cases where it does not necessarily make sense to turn on the hood and light everytime the user place a pan on the stove:
+
+1. Cooking != hood on, the user could be simply boiling something and does not need the hood to be on.  
+
+2. Pan on the stove != cooking, the user could sometimes leave the pan on the stove as a temporary storage. 
+
+Considering those 2 use cases, it might be really annoying if the hood is on everytime when the user have no such intention. However, when there's no pan on the stove (for a certain period of time, such as 10 mins), it must mean that the stove should be off.
+
+Therefore, for part 2, I am using the OpenCV object detection, and the design is to automatically switch off the hood/light if there are no pan on the stove for over 10 mins (for demo, I will count 10 secs instead of 10 mins).
 
 **\*\*\*Include a short video demonstrating the finished result.\*\*\***
