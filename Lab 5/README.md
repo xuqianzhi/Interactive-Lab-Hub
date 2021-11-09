@@ -104,3 +104,5 @@ Considering those 2 use cases, it might be really annoying if the hood is on eve
 Therefore, for part 2, I am using the OpenCV object detection, and the design is to automatically switch off the hood/light if there are no pan on the stove for over 10 mins (for demo, I will count 10 secs instead of 10 mins).
 
 **\*\*\*Include a short video demonstrating the finished result.\*\*\***
+
+https://youtu.be/e5BqFuwti4g
