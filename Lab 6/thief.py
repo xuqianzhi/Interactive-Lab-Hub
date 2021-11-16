@@ -32,13 +32,8 @@ while True:
         time.sleep(3)
         initial_delay = False
     r, g, b, a = sensor.color_data
-    print(a)
-    # proximity = sensor.proximity
-    # print(proximity)
-    # if proximity > threshold:
-    #     reset = 1
-    # elif reset == 1 and proximity < threshold:
-    #     reset = 0
-        # client.publish(topic, "YoyoStolen!" + str(random.uniform(0, 1)))
+    elif reset == 1 and a < threshold:
+        reset = 0
+        client.publish(topic, "YoyoStolen!" + str(random.uniform(0, 1)))
 
     time.sleep(0.1)
