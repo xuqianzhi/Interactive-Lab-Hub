@@ -2,6 +2,7 @@ import paho.mqtt.client as mqtt
 import uuid
 import adafruit_apds9960.apds9960
 import busio
+import board
 
 #Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
