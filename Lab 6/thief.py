@@ -32,7 +32,7 @@ while True:
         time.sleep(3)
         initial_delay = False
     r, g, b, a = sensor.color_data
-    elif reset == 1 and a < threshold:
+    if reset == 1 and a < threshold:
         reset = 0
         client.publish(topic, "YoyoStolen!" + str(random.uniform(0, 1)))
 
