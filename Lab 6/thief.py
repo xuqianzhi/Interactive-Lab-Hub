@@ -22,13 +22,19 @@ sensor = adafruit_apds9960.apds9960.APDS9960(i2c)
 
 sensor.enable_proximity = True
 sensor.enable_color = True
-threshold = 125
+threshold = 800
 
 topic = "IDD/detect"  
 reset = 1
+initial_delay = True
 while True:
+    if !initial_delay:
+        continue
+    else:
+        time.sleep(3)
+        initial_delay = False
     r, g, b, a = sensor.color_data
-    print(r, g, b, a)
+    print(a)
     # proximity = sensor.proximity
     # print(proximity)
     # if proximity > threshold:
