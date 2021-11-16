@@ -20,15 +20,17 @@ i2c = busio.I2C(board.SCL, board.SDA)
 sensor = adafruit_apds9960.apds9960.APDS9960(i2c)
 
 sensor.enable_proximity = True
+threshold = 125
 
 topic = "IDD/detect"  
 reset = 1
 while True:
     proximity = sensor.proximity
-    print(proximity)
-    time.sleep(0.01)
-    # if proximity == 0:
-    #     reset = 1
-    # elif reset == 1 and proximity != 0:
-    #     reset = 0
-    #     client.publish(topic, val)
+    # print(proximity)
+    if proximity < threshold:
+        reset = 1
+    elif reset == 1 and proximity > threshold:
+        reset = 0
+        client.publish(topic, "YoyoStolen!")
+
+    time.sleep(0.1)
