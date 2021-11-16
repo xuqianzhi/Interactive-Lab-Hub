@@ -28,9 +28,7 @@ topic = "IDD/detect"
 reset = 1
 initial_delay = True
 while True:
-    if not initial_delay:
-        continue
-    else:
+    if initial_delay:
         time.sleep(3)
         initial_delay = False
     r, g, b, a = sensor.color_data
