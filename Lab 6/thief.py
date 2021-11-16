@@ -34,6 +34,6 @@ while True:
     r, g, b, a = sensor.color_data
     if reset == 1 and a < threshold:
         reset = 0
-        client.publish(topic, "YoyoStolen!" + str(random.uniform(0, 1)))
+        client.publish(topic, "YoyoStolen!")
 
     time.sleep(0.1)
