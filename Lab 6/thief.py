@@ -3,6 +3,7 @@ import uuid
 import adafruit_apds9960.apds9960
 import busio
 import board
+import time
 
 #Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
@@ -24,7 +25,9 @@ r, g, b, a = sensor.color_data
 topic = "IDD/detect"  
 reset = 1
 while True:
+    r, g, b, a = sensor.color_data
     print(r, g, b, a)
+    time.sleep(0.01)
     # if proximity == 0:
     #     reset = 1
     # elif reset == 1 and proximity != 0:
