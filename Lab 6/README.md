@@ -1,90 +1,23 @@
 # Little Interactions Everywhere
 
-## Prep
-
-1. Pull the new changes from the class interactive-lab-hub. (You should be familiar with this already!)
-2. Install [MQTT Explorer](http://mqtt-explorer.com/) on your laptop.
-3. Readings before class:
-   * [MQTT](#MQTT)
-   * [The Presence Table](https://dl.acm.org/doi/10.1145/1935701.1935800) and [video](https://vimeo.com/15932020)
-
-
-## Overview
-
-The point of this lab is to introduce you to distributed interaction. We have included some Natural Language Processing (NLP) and Generation (NLG) but those are not really the emphasis. Feel free to dig into the examples and play around the code which you can integrate into your projects if wanted. However, we want to emphasize that the grading will focus on your ability to develop interesting uses for messaging across distributed devices. Here are the four sections of the lab activity:
-
-A) [MQTT](#part-a)
-
-B) [Send and Receive on your Pi](#part-b)
-
-C) [Streaming a Sensor](#part-c)
-
-D) [The One True ColorNet](#part-d)
-
-E) [Make It Your Own](#part-)
-
 ## Part 1.
-
-### Part A
-### MQTT
-
-MQTT is a lightweight messaging portal invented in 1999 for low bandwidth networks. It was later adopted as a defacto standard for a variety of [Internet of Things (IoT)](https://en.wikipedia.org/wiki/Internet_of_things) devices. 
-
-#### The Bits
-
-* **Broker** - The central server node that receives all messages and sends them out to the interested clients. Our broker is hosted on the far lab server (Thanks David!) at `farlab.infosci.cornell.edu/8883`. Imagine that the Broker is the messaging center!
-* **Client** - A device that subscribes or publishes information to/on the network.
-* **Topic** - The location data gets published to. These are *hierarchical with subtopics*. For example, If you were making a network of IoT smart bulbs this might look like `home/livingroom/sidelamp/light_status` and `home/livingroom/sidelamp/voltage`. With this setup, the info/updates of the sidelamp's `light_status` and `voltage` will be store in the subtopics. Because we use this broker for a variety of projects you have access to read, write and create subtopics of `IDD`. This means `IDD/ilan/is/a/goof` is a valid topic you can send data messages to.
-*  **Subscribe** - This is a way of telling the client to pay attention to messages the broker sends out on the topic. You can subscribe to a specific topic or subtopics. You can also unsubscribe. Following the previouse example of home IoT smart bulbs, subscribing to `home/livingroom/sidelamp/#` would give you message updates to both the light_status and the voltage.
-* **Publish** - This is a way of sending messages to a topic. Again, with the previouse example, you can set up your IoT smart bulbs to publish info/updates to the topic or subtopic. Also, note that you can publish to topics you do not subscribe to. 
-
-
-**Important note:** With the broker we set up for the class, you are limited to subtopics of `IDD`. That is, to publish or subcribe, the topics will start with `IDD/`. Also, setting up a broker is not much work, but for the purposes of this class, you should all use the broker we have set up for you!
-
-
-#### Useful Tooling
-
-Debugging and visualizing what's happening on your MQTT broker can be helpful. We like [MQTT Explorer](http://mqtt-explorer.com/). You can connect by putting in the settings from the image below.
-
-
-![input settings](imgs/mqtt_explorer.png?raw=true)
-
-
-Once connected, you should be able to see all the messages under the IDD topic. , go to the **Publish** tab and try publish something! From the interface you can send and plot messages as well. Remember, you are limited to subtopics of `IDD`. That is, to publish or subcribe, the topics will start with `IDD/`.
-
-![publish settings](imgs/mqtt_explorer_2.png?raw=true)
-
 
 ### Part B
 ### Send and Receive on your Pi
 
 [sender.py](./sender.py) and and [reader.py](./reader.py) show you the basics of using the mqtt in python. Let's spend a few minutes running these and seeing how messages are transferred and shown up. Before working on your Pi, keep the connection of `farlab.infosci.cornell.edu/8883` with MQTT Explorer running on your laptop.
 
-**Running Examples on Pi**
-
-* Install the packages from `requirements.txt` under a virtual environment, we will continue to use the `circuitpython` environment we setup earlier this semester:
-  ```
-  pi@ixe00:~ $ source circuitpython/bin/activate
-  (circuitpython) pi@ixe00:~ $ cd Interactive-Lab-Hub/Lab\ 6
-  (circuitpython) pi@ixe00:~ Interactive-Lab-Hub/Lab 6 $ pip install -r requirements.txt
-  ```
-* Run `sender.py`, fill in a topic name (should start with `IDD/`), then start sending messages. You should be able to see them on MQTT Explorer.
-  ```
-  (circuitpython) pi@ixe00:~ Interactive-Lab-Hub/Lab 6 $ python sender.py
-  pi@ReiIDDPi:~/Interactive-Lab-Hub/Lab 6 $ python sender.py
-  >> topic: IDD/ReiTesting
-  now writing to topic IDD/ReiTesting
-  type new-topic to swich topics
-  >> message: testtesttest
-  ...
-  ```
-* Run `reader.py`, and you should see any messages being published to `IDD/` subtopics.
-  ```
-  (circuitpython) pi@ixe00:~ Interactive-Lab-Hub/Lab 6 $ python reader.py
-  ...
-  ```
-
 **\*\*\*Consider how you might use this messaging system on interactive devices, and draw/write down 5 ideas here.\*\*\***
+
+1. Draw and guess game: this game involve multiple player, one of the player would draw a painting on the screen, and the rest of the player would guess what the painting is about by sending their guess to the server. The first player who get a match will get a point. 
+    
+2. Announcement system: combined with text2speech system, it can be used for announcement system in places like shopping mall.
+
+3. Theft alert system: combined with proximity sensor, it can be used to send out alert when object proximity drops below certain threshold.
+
+4. Weather alert: combined with weather forcast API, it can be used to alert extreme whether, or simply clothing recommendation of the day.
+
+5. Remote room control: combined with speech2text, if can be used to voice command the room smart systems such as thermostat control.
 
 ### Part C
 ### Streaming a Sensor
