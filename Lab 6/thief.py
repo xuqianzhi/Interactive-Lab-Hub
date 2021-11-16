@@ -26,8 +26,10 @@ threshold = 125
 topic = "IDD/detect"  
 reset = 1
 while True:
-    proximity = sensor.proximity
-    print(proximity)
+    r, g, b, a = sensor.color_data
+    print(r, g, b, a)
+    # proximity = sensor.proximity
+    # print(proximity)
     # if proximity > threshold:
     #     reset = 1
     # elif reset == 1 and proximity < threshold:
