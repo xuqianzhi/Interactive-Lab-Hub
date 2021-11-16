@@ -4,6 +4,7 @@ import adafruit_apds9960.apds9960
 import busio
 import board
 import time
+import random
 
 #Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
@@ -31,6 +32,6 @@ while True:
         reset = 1
     elif reset == 1 and proximity > threshold:
         reset = 0
-        client.publish(topic, "YoyoStolen!")
+        client.publish(topic, "YoyoStolen!" + str(random.uniform(0, 1)))
 
     time.sleep(0.1)
