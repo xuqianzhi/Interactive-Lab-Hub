@@ -28,9 +28,9 @@ reset = 1
 while True:
     proximity = sensor.proximity
     # print(proximity)
-    if proximity < threshold:
+    if proximity > threshold:
         reset = 1
-    elif reset == 1 and proximity > threshold:
+    elif reset == 1 and proximity < threshold:
         reset = 0
         client.publish(topic, "YoyoStolen!" + str(random.uniform(0, 1)))
 
