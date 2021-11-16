@@ -19,14 +19,13 @@ client.connect(
 i2c = busio.I2C(board.SCL, board.SDA)
 sensor = adafruit_apds9960.apds9960.APDS9960(i2c)
 
-sensor.enable_color = True
-r, g, b, a = sensor.color_data
+sensor.enable_proximity = True
 
 topic = "IDD/detect"  
 reset = 1
 while True:
-    r, g, b, a = sensor.color_data
-    print(r, g, b, a)
+    proximity = sensor.proximity
+    print(proximity)
     time.sleep(0.01)
     # if proximity == 0:
     #     reset = 1
