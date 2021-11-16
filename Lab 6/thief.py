@@ -28,7 +28,7 @@ topic = "IDD/detect"
 reset = 1
 initial_delay = True
 while True:
-    if !initial_delay:
+    if not initial_delay:
         continue
     else:
         time.sleep(3)
