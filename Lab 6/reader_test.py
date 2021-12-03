@@ -36,7 +36,7 @@ client.on_message = on_message
 
 #connect to the broker
 client.connect(
-    '192.168.99.54',
+    'localhost',
     port=1883)
 
 # this is blocking. to see other ways of dealing with the loop
