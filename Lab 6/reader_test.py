@@ -26,7 +26,7 @@ def on_message(cleint, userdata, msg):
 # Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
 # configure network encryption etc
-# client.tls_set()
+client.tls_set()
 # this is the username and pw we have setup for the class
 # client.username_pw_set('idd', 'device@theFarm')
 
@@ -36,7 +36,7 @@ client.on_message = on_message
 
 #connect to the broker
 client.connect(
-    'localhost',
+    '192.168.99.54',
     port=1883)
 
 # this is blocking. to see other ways of dealing with the loop
