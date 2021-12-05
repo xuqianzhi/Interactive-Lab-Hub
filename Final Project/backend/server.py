@@ -21,7 +21,4 @@ def humidity():
     return response
 
 if __name__ == "__main__":
-    # app.run(debug=True)
-    # app.run(host="192.168.99.154", port=4000)
-    app.run(host="192.168.99.54", port=4000)
-    # app.run(host="<local IP address here>", port=4000)
+    # app.run(host="<Your PI IP address here>", port=4000)
