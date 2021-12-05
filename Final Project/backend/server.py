@@ -13,8 +13,6 @@ def humidity():
     def long_running_get_data(**kwargs):
         your_params = kwargs.get('post_data', {})
 
-        time.sleep(5)
-
     thread = threading.Thread(target=long_running_get_data, kwargs={
                     'post_data': data})
     thread.start()
@@ -24,4 +22,6 @@ def humidity():
 
 if __name__ == "__main__":
     # app.run(debug=True)
-    app.run(host="192.168.99.154", port=4000)
+    # app.run(host="192.168.99.154", port=4000)
+    app.run(host="192.168.99.54", port=4000)
+    # app.run(host="<local IP address here>", port=4000)
