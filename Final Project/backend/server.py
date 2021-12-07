@@ -5,8 +5,6 @@ import threading
 
 app = Flask(__name__)
 
-print("test github")
-
 @app.route('/humidity')
 def humidity():
 
